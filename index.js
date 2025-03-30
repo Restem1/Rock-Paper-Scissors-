@@ -1,6 +1,6 @@
 
 function getComputerChoice(){
-    var randomChoice = Math.floor(Math.random()*3) + 1;
+    var randomChoice = Math.floor((Math.random()*3 )+ 1);
     let computerChoice;
     if(randomChoice === 1){
          computerChoice = "rock";
@@ -16,19 +16,21 @@ function getComputerChoice(){
 let humanScore = 0;
 let computerScore = 0; 
 function getHumanFunction(){
-    var inputFromUser = prompt().toLowerCase();
-    
+    let inputFromUser = prompt().toLowerCase();
+    return inputFromUser;   
 }
-const humanChoice = getHumanFunction();
-const computerChoice = getComputerChoice();
-function playerRound(humanChoice , computerChoice){
-    
+
+
+
+function playerRound( humanChoice = getHumanFunction(),computerChoice = getComputerChoice()){
+    console.log(humanChoice);
+    console.log(computerChoice);
    if(humanChoice === computerChoice){
         return "Its a tie";
    }
-   else if((userChoice === "Rock" && computerChoice === "Scissors") || 
-   (userChoice === "Scissors" && computerChoice === "Paper") || 
-   (userChoice === "Paper" && computerChoice === "Rock")){
+   else if(( humanChoice=== "rock" && computerChoice === "scissors") || 
+   (humanChoice === "scissors" && computerChoice === "paper") || 
+   (humanChoice === "paper" && computerChoice === "rock")){
         humanScore++;
         return "you won"
    }
@@ -36,4 +38,5 @@ function playerRound(humanChoice , computerChoice){
     computerScore++;
     return "you lost"
    }
+  
 }
